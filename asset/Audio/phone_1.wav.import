@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cpy0ylde8n7x5"
-path="res://.godot/imported/phone_1.wav-ca1d1b8d42cbb94d573174c103530dc1.sample"
+path="res://.godot/imported/phone_1.wav-57267f2486df1e2e7b9993af52e68755.sample"
 
 [deps]
 
-source_file="res://asset/Audio/phone_1.wav"
-dest_files=["res://.godot/imported/phone_1.wav-ca1d1b8d42cbb94d573174c103530dc1.sample"]
+source_file="res://asset/audio/phone_1.wav"
+dest_files=["res://.godot/imported/phone_1.wav-57267f2486df1e2e7b9993af52e68755.sample"]
 
 [params]
 

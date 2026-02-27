@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cafhocv8aa23j"
-path="res://.godot/imported/flute_4.wav-6c38b0161d443aad27a68b1e269e5a43.sample"
+path="res://.godot/imported/flute_4.wav-38557eb88ca877a3fa417b133c593649.sample"
 
 [deps]
 
-source_file="res://asset/Audio/flute_4.wav"
-dest_files=["res://.godot/imported/flute_4.wav-6c38b0161d443aad27a68b1e269e5a43.sample"]
+source_file="res://asset/audio/flute_4.wav"
+dest_files=["res://.godot/imported/flute_4.wav-38557eb88ca877a3fa417b133c593649.sample"]
 
 [params]
 

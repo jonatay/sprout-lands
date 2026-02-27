@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cca425iw41kfo"
-path="res://.godot/imported/Egg_Spritesheet_red.png-a74330a97865cba4891e81a77240c0c3.ctex"
+path="res://.godot/imported/egg_spritesheet_red.png-d74a86906a7a25e352640616928f2233.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Animals/Chicken_Egg/Egg_Spritesheet_red.png"
-dest_files=["res://.godot/imported/Egg_Spritesheet_red.png-a74330a97865cba4891e81a77240c0c3.ctex"]
+source_file="res://asset/animals/chicken_egg/egg_spritesheet_red.png"
+dest_files=["res://.godot/imported/egg_spritesheet_red.png-d74a86906a7a25e352640616928f2233.ctex"]
 
 [params]
 

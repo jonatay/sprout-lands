@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c8qu1uvytbegy"]
+
+[ext_resource type="SpriteFrames" uid="uid://cjsnhisfoyq8w" path="res://resource/character_sprite_frames.tres" id="1_csq6l"]
+[ext_resource type="Script" uid="uid://b4xabbjnrbt55" path="res://game_mechanics/node_state_machine/node_state_machine.gd" id="2_6gas5"]
+[ext_resource type="Script" uid="uid://oeie7eq8k26f" path="res://game_mechanics/node_state_machine/node_state_idle.gd" id="3_lpm2l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_csq6l"]
+radius = 6.0
+height = 18.0
+
+[node name="Player" type="CharacterBody2D" unique_id=449635646]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218906048]
+position = Vector2(0, -8)
+sprite_frames = ExtResource("1_csq6l")
+animation = &"idle_up"
+autoplay = "idle_down"
+frame_progress = 0.73637605
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315412432]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_csq6l")
+
+[node name="NodeStateMachine" type="Node" parent="." unique_id=599923105]
+script = ExtResource("2_6gas5")
+
+[node name="Idle" type="Node" parent="NodeStateMachine" unique_id=915935866 node_paths=PackedStringArray("player", "animated_sprite_2D")]
+script = ExtResource("3_lpm2l")
+player = NodePath("../..")
+animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://d2tquaat6n7mv"

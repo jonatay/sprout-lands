@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bthk7bew6v2rf"
-path="res://.godot/imported/Free_Chicken_House.png-d6345cf1eab9211c134514ee70047d31.ctex"
+path="res://.godot/imported/free_chicken_house.png-87c93dd4f8227620959db4ade17a6eec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Objects/Free_Chicken_House.png"
-dest_files=["res://.godot/imported/Free_Chicken_House.png-d6345cf1eab9211c134514ee70047d31.ctex"]
+source_file="res://asset/objects/free_chicken_house.png"
+dest_files=["res://.godot/imported/free_chicken_house.png-87c93dd4f8227620959db4ade17a6eec.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b211ht3mw0v33"
-path="res://.godot/imported/Chicken_Baby_Blue.png-accf9594ec3708b9744e5e92c540040c.ctex"
+path="res://.godot/imported/chicken_baby_blue.png-ad5907f31cd18ad3542e9764581265ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/Animals/Chicken_Baby/Chicken_Baby_Blue.png"
-dest_files=["res://.godot/imported/Chicken_Baby_Blue.png-accf9594ec3708b9744e5e92c540040c.ctex"]
+source_file="res://asset/animals/chicken_baby/chicken_baby_blue.png"
+dest_files=["res://.godot/imported/chicken_baby_blue.png-ad5907f31cd18ad3542e9764581265ed.ctex"]
 
 [params]
 
