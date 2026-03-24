@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds3n3yq75tjfq"
-path="res://.godot/imported/egg_and_nest.png-775a81629d4e652f29e92b13eb3cf91c.ctex"
+uid="uid://cnt50yuvt65u5"
+path="res://.godot/imported/Egg_Spritesheet_Brown.png-38085eb76e55e5636e52e1f612ce579e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/characters/egg_and_nest.png"
-dest_files=["res://.godot/imported/egg_and_nest.png-775a81629d4e652f29e92b13eb3cf91c.ctex"]
+source_file="res://asset/animals/chicken_egg/Egg_Spritesheet_Brown.png"
+dest_files=["res://.godot/imported/Egg_Spritesheet_Brown.png-38085eb76e55e5636e52e1f612ce579e.ctex"]
 
 [params]
 

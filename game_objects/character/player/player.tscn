@@ -13,9 +13,10 @@ height = 18.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218906048]
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_csq6l")
-animation = &"idle_up"
+animation = &"til_left"
 autoplay = "idle_down"
-frame_progress = 0.73637605
+frame = 7
+frame_progress = 0.080425404
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315412432]
 position = Vector2(0, -9)

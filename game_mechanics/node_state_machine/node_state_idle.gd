@@ -1,5 +1,6 @@
 extends NodeState
 
+
 func _physics_process(delta):
 	var anim_name = "idle_"
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

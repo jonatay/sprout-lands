@@ -355,35 +355,27 @@ atlas = ExtResource("1_2rxb5")
 region = Rect2(336, 480, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7bobi"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(0, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pno5p"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(48, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gdmc"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(96, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qmlr"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(144, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5vfq"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(192, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p01iy"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(240, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smdv0"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(288, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jww2r"]
-atlas = ExtResource("1_2rxb5")
 region = Rect2(336, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vuena"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2nn1qvvpfy"
-path="res://.godot/imported/egg_spritesheet_blue.png-d2bf417ec554980d3256ab8403b6bf35.ctex"
+uid="uid://cyx3cqr2yspwb"
+path="res://.godot/imported/Farming Plants items.png-7fb5765ff8dcadc68577a879c1a0e31f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/animals/chicken_egg/egg_spritesheet_blue.png"
-dest_files=["res://.godot/imported/egg_spritesheet_blue.png-d2bf417ec554980d3256ab8403b6bf35.ctex"]
+source_file="res://asset/objects/items/Farming Plants items.png"
+dest_files=["res://.godot/imported/Farming Plants items.png-7fb5765ff8dcadc68577a879c1a0e31f.ctex"]
 
 [params]
 

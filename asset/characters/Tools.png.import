@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b211ht3mw0v33"
-path="res://.godot/imported/chicken_baby_blue.png-ad5907f31cd18ad3542e9764581265ed.ctex"
+uid="uid://c71n2kooo28lg"
+path="res://.godot/imported/Tools.png-e201989d7b5da8efe3f4b2f900b9cb8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/animals/chicken_baby/chicken_baby_blue.png"
-dest_files=["res://.godot/imported/chicken_baby_blue.png-ad5907f31cd18ad3542e9764581265ed.ctex"]
+source_file="res://asset/characters/Tools.png"
+dest_files=["res://.godot/imported/Tools.png-e201989d7b5da8efe3f4b2f900b9cb8e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyx3cqr2yspwb"
-path="res://.godot/imported/farming plants items.png-d105e794ae2cf56c80cb3d0e83ffff59.ctex"
+uid="uid://echoha43ya38"
+path="res://.godot/imported/Chicken_Baby.png-a1be5def01145147bf87f84c608c4fa0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/objects/items/farming plants items.png"
-dest_files=["res://.godot/imported/farming plants items.png-d105e794ae2cf56c80cb3d0e83ffff59.ctex"]
+source_file="res://asset/animals/chicken_baby/Chicken_Baby.png"
+dest_files=["res://.godot/imported/Chicken_Baby.png-a1be5def01145147bf87f84c608c4fa0.ctex"]
 
 [params]
 
