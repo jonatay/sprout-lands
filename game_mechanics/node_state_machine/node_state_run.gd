@@ -1,9 +1,9 @@
 extends NodeState
 
-@export var speed : float = 60.0
+@export var speed : float = 120.0
 
 func on_physics_process(_delta):
-	var anim_name = "walk_"
+	var anim_name = "run_"
 
 	var direction: Vector2 = GameInputEvent.movement_input() 
 	var angle = direction.angle()
@@ -19,10 +19,8 @@ func on_physics_process(_delta):
 	
 	
 func on_next_transitions() -> void:
-	if not GameInputEvent.is_movement_input():
+	if not GameInputEvent.is_movement_input() or not GameInputEvent.is_run_action_pressed():
 		transition.emit("idle")
-	elif GameInputEvent.is_run_action_pressed():
-		transition.emit("run")
 
 func on_exit() -> void:
 	animated_sprite_2d.stop()

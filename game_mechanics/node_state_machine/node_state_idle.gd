@@ -12,4 +12,19 @@ func on_physics_process(_delta):
 	
 func on_next_transitions() -> void:
 	if GameInputEvent.is_movement_input():
-		transition.emit("walk")
+		if GameInputEvent.is_run_action_pressed():
+			transition.emit("run")
+		else:
+			transition.emit("walk")
+	if GameInputEvent.is_hit_action_pressed():
+		match player.current_tool:
+			DataTypes.Tools.TOOL_CHOP:
+				transition.emit("chop")
+			DataTypes.Tools.TOOL_TILL:
+				transition.emit("till")
+			DataTypes.Tools.TOOL_WATER:
+				transition.emit("water")
+
+
+func on_exit() -> void:
+	animated_sprite_2d.stop()
