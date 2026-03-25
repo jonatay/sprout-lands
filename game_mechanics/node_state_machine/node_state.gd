@@ -3,32 +3,43 @@
 class_name NodeState
 extends Node
 
-var animation_cardinals : Array = ["right","","down","","left","","up"]
+var animation_cardinals : Array = ["right","down","left","up"]
 
 @export var player : CharacterBody2D
-@export var animated_sprite_2D : AnimatedSprite2D
+@export var animated_sprite_2d : AnimatedSprite2D
 
 var velocity : Vector2
 
 @warning_ignore("unused_signal")
 signal transition 
 
+func get_4dir_index(angle: float) -> int:
+	# Normalize angle to 0 - 2*PI
+	var normalized_angle = fposmod(angle, PI * 2)
+	# Divide into 4 quadrants (90 degrees each)
+	var index = round(normalized_angle / (PI / 2))
+	# Rounding can result in 4, which is the same as 0 (Right)
+	return int(index) % 4
+	# Usage Example:
+	# var angle = velocity.angle()
+	# var direction = get_4dir_index(angle)
 
-func _on_process(_delta : float) -> void:
+
+func on_process(_delta : float) -> void:
 	pass
 
 
-func _on_physics_process(_delta : float) -> void:
+func on_physics_process(_delta : float) -> void:
 	pass
 
 
-func _on_next_transitions() -> void:
+func on_next_transitions() -> void:
+	pass
+ 
+
+func on_enter() -> void:
 	pass
 
 
-func _on_enter() -> void:
-	pass
-
-
-func _on_exit() -> void:
+func on_exit() -> void:
 	pass

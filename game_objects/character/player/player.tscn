@@ -3,6 +3,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cjsnhisfoyq8w" path="res://resource/character_sprite_frames.tres" id="1_csq6l"]
 [ext_resource type="Script" uid="uid://b4xabbjnrbt55" path="res://game_mechanics/node_state_machine/node_state_machine.gd" id="2_6gas5"]
 [ext_resource type="Script" uid="uid://oeie7eq8k26f" path="res://game_mechanics/node_state_machine/node_state_idle.gd" id="3_lpm2l"]
+[ext_resource type="Script" uid="uid://cmftrsquqtn77" path="res://game_mechanics/node_state_machine/node_state_walk.gd" id="4_ww1ia"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_csq6l"]
 radius = 6.0
@@ -13,10 +14,8 @@ height = 18.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218906048]
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_csq6l")
-animation = &"til_left"
+animation = &"walk_down"
 autoplay = "idle_down"
-frame = 7
-frame_progress = 0.080425404
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315412432]
 position = Vector2(0, -9)
@@ -29,4 +28,8 @@ script = ExtResource("2_6gas5")
 script = ExtResource("3_lpm2l")
 player = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://d2tquaat6n7mv"
+
+[node name="Walk" type="Node" parent="NodeStateMachine" unique_id=582713796]
+script = ExtResource("4_ww1ia")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
