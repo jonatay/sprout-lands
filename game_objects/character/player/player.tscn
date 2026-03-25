@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8qu1uvytbegy"]
 
 [ext_resource type="SpriteFrames" uid="uid://cjsnhisfoyq8w" path="res://resource/character_sprite_frames.tres" id="1_csq6l"]
+[ext_resource type="Script" uid="uid://cb0mhirg2g28x" path="res://game_objects/character/player/player.gd" id="1_taou0"]
 [ext_resource type="Script" uid="uid://b4xabbjnrbt55" path="res://game_mechanics/node_state_machine/node_state_machine.gd" id="2_6gas5"]
 [ext_resource type="Script" uid="uid://oeie7eq8k26f" path="res://game_mechanics/node_state_machine/node_state_idle.gd" id="3_lpm2l"]
 [ext_resource type="Script" uid="uid://cmftrsquqtn77" path="res://game_mechanics/node_state_machine/node_state_walk.gd" id="4_ww1ia"]
@@ -9,27 +10,53 @@
 radius = 6.0
 height = 18.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_ww1ia"]
+font_size = 6
+font_color = Color(0.7558429, 0.28543314, 0.37646642, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=449635646]
+script = ExtResource("1_taou0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218906048]
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_csq6l")
-animation = &"walk_down"
+animation = &"run_left"
 autoplay = "idle_down"
+frame = 7
+frame_progress = 0.14771633
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315412432]
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_csq6l")
 
-[node name="NodeStateMachine" type="Node" parent="." unique_id=599923105]
+[node name="NodeStateMachine" type="Node" parent="." unique_id=599923105 node_paths=PackedStringArray("initial_node_state", "lbl_diag_state")]
 script = ExtResource("2_6gas5")
+initial_node_state = NodePath("Idle")
+lbl_diag_state = NodePath("../UIDiag/LblDiagState")
 
-[node name="Idle" type="Node" parent="NodeStateMachine" unique_id=915935866 node_paths=PackedStringArray("player", "animated_sprite_2D")]
+[node name="Idle" type="Node" parent="NodeStateMachine" unique_id=915935866 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("3_lpm2l")
 player = NodePath("../..")
-animated_sprite_2D = NodePath("../../AnimatedSprite2D")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
 
-[node name="Walk" type="Node" parent="NodeStateMachine" unique_id=582713796]
+[node name="Walk" type="Node" parent="NodeStateMachine" unique_id=582713796 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("4_ww1ia")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
+
+[node name="UIDiag" type="Control" parent="." unique_id=1039797295]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LblDiagState" type="Label" parent="UIDiag" unique_id=1193455905]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -26.0
+offset_right = 9.0
+offset_bottom = -17.0
+text = "State"
+label_settings = SubResource("LabelSettings_ww1ia")
