@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dqcert4l1mw4o"]
+
+[ext_resource type="Script" uid="uid://bh1125xjcfmlw" path="res://game_objects/components/gnl/interactable_component.gd" id="1_wshtm"]
+
+[node name="InteractableComponent" type="Area2D" unique_id=803468330]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_wshtm")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2lsxrjg51qt4"]
+
+[ext_resource type="Script" uid="uid://b04j1nl2lff57" path="res://game_objects/components/gnl/collector_compopnent.gd" id="1_1cgkx"]
+
+[node name="CollectorCompopnent" type="Area2D" unique_id=175165811]
+collision_layer = 128
+collision_mask = 64
+script = ExtResource("1_1cgkx")

@@ -9,26 +9,51 @@
 [ext_resource type="Script" uid="uid://bm6bk6cdsjovt" path="res://game_mechanics/node_state_machine/node_state_chop.gd" id="7_qqh50"]
 [ext_resource type="Script" uid="uid://cry2odqkdrldg" path="res://game_mechanics/node_state_machine/node_state_till.gd" id="8_webk8"]
 [ext_resource type="Script" uid="uid://cvdpvfnkvt5k4" path="res://game_mechanics/node_state_machine/node_state_water.gd" id="9_v5olg"]
+[ext_resource type="PackedScene" uid="uid://dvtt7fr3isqts" path="res://game_objects/components/gnl/hit_component.tscn" id="10_1qlut"]
+[ext_resource type="PackedScene" uid="uid://c2lsxrjg51qt4" path="res://game_objects/components/gnl/collector_compopnent.tscn" id="11_dnp41"]
+[ext_resource type="Shader" uid="uid://b4rie0gbi2krh" path="res://resource/canvas.gdshader" id="11_mretv"]
+[ext_resource type="FontFile" uid="uid://by44cg4jr20fm" path="res://asset/fonts/pixelfont_7_8x14_sproutlands.ttf" id="12_maxon"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_csq6l"]
-radius = 6.0
-height = 18.0
+radius = 5.0
+height = 10.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_ww1ia"]
-font_size = 64
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnp41"]
+radius = 3.0
 
-[node name="Player" type="CharacterBody2D" unique_id=449635646]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mretv"]
+shader = ExtResource("11_mretv")
+shader_parameter/alpha_threshold = 0.5
+
+[sub_resource type="FontVariation" id="FontVariation_nt77v"]
+base_font = ExtResource("12_maxon")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_mretv"]
+font_size = 8
+font_color = Color(0.95670766, 0.91882217, 0.9302412, 1)
+outline_size = 2
+outline_color = Color(0.26742277, 0.079158686, 0.084324695, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mretv"]
+radius = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=449635646 groups=["Collector", "DoorOpener"]]
+collision_layer = 7
+collision_mask = 71
 script = ExtResource("1_taou0")
 current_tool = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1218906048]
 position = Vector2(0, -8)
 sprite_frames = ExtResource("1_csq6l")
-animation = &"walk_down"
+animation = &"chop_down"
 autoplay = "idle_down"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315412432]
-position = Vector2(0, -9)
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_csq6l")
 
 [node name="NodeStateMachine" type="Node" parent="." unique_id=599923105 node_paths=PackedStringArray("initial_node_state", "lbl_diag_state")]
@@ -54,8 +79,9 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
 
-[node name="Chop" type="Node" parent="NodeStateMachine" unique_id=1458993604 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Chop" type="Node" parent="NodeStateMachine" unique_id=1458993604 node_paths=PackedStringArray("hit_component_collision_shape_2d", "player", "animated_sprite_2d")]
 script = ExtResource("7_qqh50")
+hit_component_collision_shape_2d = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
@@ -72,25 +98,43 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 metadata/_custom_type_script = "uid://d2tquaat6n7mv"
 
+[node name="HitComponent" parent="." unique_id=1388703534 instance=ExtResource("10_1qlut")]
+tool = 1
+
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1278000216]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_dnp41")
+debug_color = Color(0.93512666, 0.14163408, 0.53298056, 0.41960785)
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1813976985]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11.000002
-offset_top = -27.999998
-offset_right = 197.0
-offset_bottom = 61.333336
+offset_left = -13.5
+offset_top = -31.0
+offset_right = 13.5
+offset_bottom = -19.333332
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.1, 0.1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=685542640]
 layout_mode = 2
 
 [node name="LblDiagState" type="Label" parent="PanelContainer/MarginContainer" unique_id=1193455905]
+material = SubResource("ShaderMaterial_mretv")
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_nt77v")
 text = "State"
-label_settings = SubResource("LabelSettings_ww1ia")
+label_settings = SubResource("LabelSettings_mretv")
 horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+vertical_alignment = 2
+
+[node name="CollectorCompopnent" parent="." unique_id=175165811 node_paths=PackedStringArray("label_diag") instance=ExtResource("11_dnp41")]
+label_diag = NodePath("../PanelContainer/MarginContainer/LblDiagState")
+collector_name = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectorCompopnent" unique_id=482456672]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_mretv")
+disabled = true
+debug_color = Color(0.5348419, 0.5690929, 0.064040646, 0.41960785)

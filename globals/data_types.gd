@@ -1,9 +1,9 @@
 class_name DataTypes
 
 enum Tools {
-	TOOL_NONE,
-	TOOL_CHOP,
-	TOOL_TILL,
-	TOOL_WATER,
-	TOOL_PLANT
+	TOOL_NONE = 0,
+	TOOL_CHOP = 1,
+	TOOL_TILL = 2,
+	TOOL_WATER = 3,
+	TOOL_PLANT = 4
 }

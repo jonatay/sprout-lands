@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bmr2ixbgqrwqf"]
+
+[ext_resource type="Texture2D" uid="uid://ct3hbkt5lnjqi" path="res://asset/tilesets/building_parts/door_animation_sprites.png" id="1_8ufxm"]
+[ext_resource type="Script" uid="uid://btloickeihtck" path="res://game_objects/components/animated_door/animated_door.gd" id="1_e58k6"]
+[ext_resource type="PackedScene" uid="uid://dqcert4l1mw4o" path="res://game_objects/components/gnl/interactable_component.tscn" id="3_os24k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3614t"]
+size = Vector2(16, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e58k6"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3614t"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lijg"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44rmm"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bspic"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vucm"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nvwd"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50ud8"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c682k"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3n21c"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evucg"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3sd1"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yhxy"]
+atlas = ExtResource("1_8ufxm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1au2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e58k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3614t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lijg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44rmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bspic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vucm")
+}],
+"loop": false,
+"name": &"close_door",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nvwd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50ud8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c682k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3n21c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evucg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3sd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yhxy")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_os24k"]
+size = Vector2(6, 7)
+
+[node name="AnimatedDoor" type="StaticBody2D" unique_id=651233115]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_e58k6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446814052]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_3614t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1338030032]
+sprite_frames = SubResource("SpriteFrames_1au2h")
+animation = &"close_door"
+autoplay = "default"
+
+[node name="InteractableComponent" parent="." unique_id=803468330 instance=ExtResource("3_os24k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=985626845]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_os24k")
+debug_color = Color(0.76862746, 0.6509804, 0.09803922, 0.27058825)

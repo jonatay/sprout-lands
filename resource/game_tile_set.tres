@@ -1,9 +1,15 @@
 [gd_resource type="TileSet" format=3 uid="uid://cnun85vie7v36"]
 
 [ext_resource type="Texture2D" uid="uid://dx6tkn16todrs" path="res://asset/tilesets/water.png" id="1_avk1n"]
+[ext_resource type="PackedScene" uid="uid://cit5bl6xthvdb" path="res://game_objects/components/wood/big_tree.tscn" id="1_dkmce"]
+[ext_resource type="PackedScene" uid="uid://1ll3tjwrmo40" path="res://game_objects/components/wood/small_tree.tscn" id="1_uescj"]
 [ext_resource type="Texture2D" uid="uid://cvt2kc0a57o6s" path="res://asset/tilesets/grass.png" id="2_jrb1c"]
 [ext_resource type="Texture2D" uid="uid://djrphynxr2akv" path="res://asset/tilesets/tilled_dirt.png" id="3_ueh5x"]
 [ext_resource type="Texture2D" uid="uid://c3rcti8b8trcv" path="res://asset/objects/basic_grass_biom_things.png" id="4_lcpdk"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_dkmce"]
+scenes/1/scene = ExtResource("1_dkmce")
+scenes/2/scene = ExtResource("1_uescj")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avk1n"]
 texture = ExtResource("1_avk1n")
@@ -846,3 +852,4 @@ sources/1 = SubResource("TileSetAtlasSource_avk1n")
 sources/2 = SubResource("TileSetAtlasSource_yfmw4")
 sources/3 = SubResource("TileSetAtlasSource_5tsmw")
 sources/4 = SubResource("TileSetAtlasSource_dd02f")
+sources/0 = SubResource("TileSetScenesCollectionSource_dkmce")
