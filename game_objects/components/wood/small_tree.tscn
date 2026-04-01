@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://1ll3tjwrmo40"]
 
-[ext_resource type="Shader" uid="uid://cr8xwugbeemrv" path="res://resource/tree_shake.gdshader" id="1_7q7rn"]
+[ext_resource type="Shader" uid="uid://cr8xwugbeemrv" path="res://resource/shake.gdshader" id="1_7q7rn"]
 [ext_resource type="Texture2D" uid="uid://gwv2uvj1vpbr" path="res://asset/objects/trees,_stumps_and_bushes.png" id="1_bqrv1"]
 [ext_resource type="Script" uid="uid://b4k1gmv7cbu2l" path="res://game_objects/components/wood/small_tree.gd" id="2_rucjj"]
 [ext_resource type="PackedScene" uid="uid://bhi1ft3lxqc3f" path="res://game_objects/components/gnl/hurt_component.tscn" id="2_usgj3"]
 [ext_resource type="PackedScene" uid="uid://c0tc61xqneovu" path="res://game_objects/components/gnl/damage_component.tscn" id="4_7h4k2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xkp2r"]
+resource_local_to_scene = true
 shader = ExtResource("1_7q7rn")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_usgj3"]
 atlas = ExtResource("1_bqrv1")
@@ -21,6 +24,7 @@ size = Vector2(10, 22)
 
 [node name="SmallTree" type="Sprite2D" unique_id=1653401931]
 material = SubResource("ShaderMaterial_xkp2r")
+position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_usgj3")
 script = ExtResource("2_rucjj")
 

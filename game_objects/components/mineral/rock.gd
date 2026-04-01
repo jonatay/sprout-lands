@@ -1,10 +1,11 @@
 extends Sprite2D
-class_name BigTree
+class_name Rock
+
 
 @onready var hurt_component: HurtComponent = $HurtComponent
 @onready var damage_component: DamageComponent = $DamageComponent
 
-var log_scene : PackedScene = preload("uid://d3mrfhhhbfxxd")
+var resource_scene : PackedScene = preload("uid://cp6nxovx36m2x")
 
 
 func _ready():
@@ -13,16 +14,16 @@ func _ready():
 
 func _on_hurt(hit_damage:int)-> void:
 	damage_component.apply_damage(hit_damage)
-	# print("current damage: ", damage_component.current_damage)
-	material.set_shader_parameter("shake_intensity", 1.5)
+	print("current damage: ", damage_component.current_damage)
+	material.set_shader_parameter("shake_intensity", 1.0)
 	await get_tree().create_timer(0.5).timeout
 	material.set_shader_parameter("shake_intensity", 0.0)
-	
+
 func _on_max_damage_reached():
 	call_deferred("_create_resource") 
 	queue_free()
 
 func _create_resource():
-	var log_instance = log_scene.instantiate()
-	get_parent().add_child(log_instance)
-	log_instance.global_position = global_position
+	var resource_instance = resource_scene.instantiate()
+	get_parent().add_child(resource_instance)
+	resource_instance.global_position = global_position

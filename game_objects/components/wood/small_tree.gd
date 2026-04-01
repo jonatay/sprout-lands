@@ -15,6 +15,9 @@ func _ready():
 func _on_hurt(hit_damage:int)-> void:
 	damage_component.apply_damage(hit_damage)
 	# print("current damage: ", damage_component.current_damage)
+	material.set_shader_parameter("shake_intensity", 1.0)
+	await get_tree().create_timer(0.5).timeout
+	material.set_shader_parameter("shake_intensity", 0.0)
 
 func _on_max_damage_reached():
 	call_deferred("_create_resource") 

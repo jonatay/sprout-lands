@@ -39,6 +39,7 @@ outline_color = Color(0.26742277, 0.079158686, 0.084324695, 1)
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=449635646 groups=["Collector", "DoorOpener"]]
+y_sort_enabled = true
 collision_layer = 7
 collision_mask = 71
 script = ExtResource("1_taou0")
