@@ -1,4 +1,6 @@
 extends NodeState
+class_name PlayerStateChop
+
 
 @export var hit_component_collision_shape_2d : CollisionShape2D
 

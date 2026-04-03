@@ -1,4 +1,5 @@
 extends NodeState
+class_name PlayerStateRun
 
 @export var speed : float = 120.0
 

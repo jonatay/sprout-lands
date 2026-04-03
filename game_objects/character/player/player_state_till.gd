@@ -1,8 +1,9 @@
 extends NodeState
+class_name PlayerStateTill
 
 
 func on_enter() -> void:
-	var anim_name = "water"
+	var anim_name = "till"
 
 	var direction: Vector2 = player.player_direction 
 	var angle = direction.angle()

@@ -1,4 +1,5 @@
 extends NodeState
+class_name PlayerStateIdle
 
 func on_physics_process(_delta):
 	var anim_name = "idle_"

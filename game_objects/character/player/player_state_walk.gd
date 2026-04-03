@@ -1,4 +1,5 @@
 extends NodeState
+class_name PlayerStateWalk
 
 @export var speed : float = 60.0
 
